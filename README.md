@@ -1,3 +1,4 @@
+![](https://github.com/kavya507/portfolio/blob/main/images/IMG_5240.jpeg)
 # Data Scientist
 
 ## Education
