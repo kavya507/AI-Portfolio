@@ -1,5 +1,3 @@
-
-![Image Alt Text](IMG_5240.jpeg)
 # Data Scientist
 
 
