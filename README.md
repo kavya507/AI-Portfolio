@@ -1,4 +1,4 @@
-<div style="text-align: justify; width: 80%; margin: auto;">
+<div style="text-align: justify">
 
 <h1>Data Scientist</h1>
 
