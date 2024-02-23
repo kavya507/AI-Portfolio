@@ -6,7 +6,7 @@
 - B.Tech., Computer Science | JNTU, Hydrabad, India (_May 2019_)
 
 ## Work Experience
-**Magnit Global |Client: Cigna, VA | Data Measurement & Reporting Analyst**                              
+**Magnit Global |Client: Cigna, VA | (_Data Measurement & Reporting Analyst_)**                              
 
 - Led REST API-driven ETL processes for seamless data integration from diverse external sources to the relational database
 - Implemented robust error handling for API notifications, ensuring efficient logging of technical exceptions and error messages. Applied advanced SQL queries and Splunk log analysis for insightful reporting, distinguishing genuine system failures from false negatives.
