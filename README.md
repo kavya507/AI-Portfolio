@@ -2,8 +2,8 @@
 
 
 ## Education							       		
-- Master’s in Computer Science	| George Mason University (_December 2019_)	 			        		
-- Bachelor’s in Computer Science | Jawaharlal Nehru Institute of Technology (_May 2017_)
+- M.S., Computer Science	| George Mason University (_May 2023_)	 			        		
+- B.Tech., in Computer Science | Jawaharlal Nehru Institute of Technology (_May 2019_)
 
 ## Work Experience
 **Magnit Global |Client: Cigna, VA | Data Measurement & Reporting Analyst**                              
