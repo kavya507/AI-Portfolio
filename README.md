@@ -1,6 +1,6 @@
-![](https://github.com/kavya507/portfolio/blob/main/images/IMG_5240.jpeg)
-# Data Scientist
 
+# Data Scientist
+![](https://github.com/kavya507/portfolio/blob/main/images/IMG_5240.jpeg)
 ## Education
 - Master’s in Computer Science, George Mason University, Fairfax, VA, USA                                         
 - Bachelor’s in Computer Science, Jawaharlal Nehru Institute of Technology, India                       
