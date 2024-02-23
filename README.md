@@ -1,6 +1,5 @@
 
 # Data Scientist
-![](https://github.com/kavya507/portfolio/blob/main/images/IMG_5240.jpeg)
 ![Image Alt Text](images/IMG_5240.jpeg)
 
 ## Education
