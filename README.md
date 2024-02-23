@@ -2,8 +2,8 @@
 
 
 ## Education							       		
-- M.S., Computer Science	| George Mason University (_May 2023_)	 			        		
-- B.Tech., Computer Science | JNTU, India (_May 2019_)
+- M.S., Computer Science	| George Mason University, Va (_May 2023_)	 			        		
+- B.Tech., Computer Science | JNTU, Hydrabad, India (_May 2019_)
 
 ## Work Experience
 **Magnit Global |Client: Cigna, VA | Data Measurement & Reporting Analyst**                              
