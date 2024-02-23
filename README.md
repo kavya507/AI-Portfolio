@@ -1,12 +1,9 @@
 # Data Scientist
 
 
-## Education
-- Master’s in Computer Science, George Mason University, Fairfax, VA, USA                                         
-- Bachelor’s in Computer Science, Jawaharlal Nehru Institute of Technology, India                       
-- Ph.D., Physics | The University of Texas at Dallas (_May 2022_)								       		
-- M.S., Physics	| The University of Texas at Dallas (_December 2019_)	 			        		
-- B.S., Physics | The University of Texas at Dallas (_May 2017_)
+## Education							       		
+- Master’s in Computer Science	| George Mason University (_December 2019_)	 			        		
+- Bachelor’s in Computer Science | Jawaharlal Nehru Institute of Technology (_May 2017_)
 
 ## Work Experience
 **Magnit Global |Client: Cigna, VA | Data Measurement & Reporting Analyst**                              
