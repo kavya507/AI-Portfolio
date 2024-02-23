@@ -1,8 +1,8 @@
 # Data Scientist
 
 ## Education
-Master’s in Computer Science, George Mason University, Fairfax, VA, USA                                         
-Bachelor’s in Computer Science, Jawaharlal Nehru Institute of Technology, India                       
+- Master’s in Computer Science, George Mason University, Fairfax, VA, USA                                         
+- Bachelor’s in Computer Science, Jawaharlal Nehru Institute of Technology, India                       
 
 
 ## Work Experience
@@ -25,7 +25,7 @@ Smart Bridge, India |Data Scientist Intern  					                         April 
 
 
 ## Projects
-Netflix Data Analysis, Tableau public 
+[Project 1 Netflix Data Analysis, Tableau public ]
 - Leveraged Tableau for in-depth analysis of Netflix data, extracting insights on viewership trends and genre preferences.
 - Enhanced user experience with dynamic tooltips and parameter controls, translating complex data into visually appealing charts for informed decision-making.
 
