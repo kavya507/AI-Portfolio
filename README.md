@@ -1,11 +1,11 @@
 # Data Scientist
 
-### Education
+## Education
 Master’s in Computer Science, George Mason University, Fairfax, VA, USA                                         
 Bachelor’s in Computer Science, Jawaharlal Nehru Institute of Technology, India                       
 
 
-### Work Experience
+## Work Experience
 Magnit Global |Client: Cigna, VA | Data Measurement & Reporting Analyst                              Aug 2023 - Current
 
 Led REST API-driven ETL processes for seamless data integration from diverse external sources to the relational database
@@ -24,7 +24,7 @@ Smart Bridge, India |Data Scientist Intern  					                         April 
 Developed a Support Vector Machine and Decision Tree machine learning model for the early detection of breast cancer based on the cytological features of the digital scans. Applied cross-validation k-fold technique for best and most                  
 
 
-### Projects
+## Projects
 Netflix Data Analysis, Tableau public 
 Leveraged Tableau for in-depth analysis of Netflix data, extracting insights on viewership trends and genre preferences.
 Enhanced user experience with dynamic tooltips and parameter controls, translating complex data into visually appealing charts for informed decision-making.
