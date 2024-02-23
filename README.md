@@ -8,7 +8,7 @@
 
 ## Work Experience
 
-**Magnit Global | Client: Cigna, VA | (_Data Measurement & Reporting Analyst_)**
+<b>Magnit Global | Client: Cigna, VA | (_Data Measurement & Reporting Analyst_)<b>
 - Led REST API-driven ETL processes for seamless data integration from diverse external sources to the relational database
 - Implemented robust error handling for API notifications, ensuring efficient logging of technical exceptions and error messages. Applied advanced SQL queries and Splunk log analysis for insightful reporting, distinguishing genuine system failures from false negatives.
 - Collaborated closely with cross-functional teams to understand business needs in the insurance industry and deliver data-driven solutions that drove measurable business impact
