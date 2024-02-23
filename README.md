@@ -1,6 +1,7 @@
 
-# Data Scientist
 ![Image Alt Text](IMG_5240.jpeg)
+# Data Scientist
+
 
 ## Education
 - Master’s in Computer Science, George Mason University, Fairfax, VA, USA                                         
