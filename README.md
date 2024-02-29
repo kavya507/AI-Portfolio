@@ -8,32 +8,11 @@
   <li><b>B.Tech., Computer Science</b> | JNTU, Hyderabad, India (<i>May 2019</i>)</li>
 </ul>
 
-<h2>Work Experience</h2>
-
-<b>Magnit Global | Client: Cigna, VA | (<i>Data Measurement & Reporting Analyst</i>)</b>
+<b>Deep NLP for Sentiment Analyser</b>
 <ul>
-  <li>Led REST API-driven ETL processes for seamless data integration from diverse external sources to the relational database</li>
-  <li>Implemented robust error handling for API notifications, ensuring efficient logging of technical exceptions and error messages. Applied advanced SQL queries and Splunk log analysis for insightful reporting, distinguishing genuine system failures from false negatives.</li>
-  <li>Collaborated closely with cross-functional teams to understand business needs in the insurance industry and deliver data-driven solutions that drove measurable business impact</li>
-  <li>Architected audit logging tables to track system events, logging detailed failure reasons for in-depth analysis and data lineage accountability.</li>
+  <li>Sentiment Analyser for movie reviews is the automated task of determining whether the review is either positive or negative. In this project, I built a classifier using PyTorch to fine-tune a pre-trained BERT model and achieved a good accuracy in classifying sentiment from textual data</li>
+ 
 </ul>
-
-<b>George Mason University, VA | Senior Math Tutor</b>
-<ul>
-  <li>Provided advanced mathematics tutoring, focusing on statistical analysis, machine learning, and data modeling, to enhance students' understanding and proficiency in these areas.</li>
-</ul>
-
-<b>Bank of America, India | Senior Technical Associate</b>
-<ul>
-  <li>Web Development & Programming - Designed and developed an incident review tool using JavaScript, jQuery, AJAX to create an interactive and efficient tool for managing incidents.</li>
-  <li>Used automation to streamline work processes and improve operational efficiency. This resulted in a 60% increase in productivity and improved quality, leading to higher customer satisfaction.</li>
-</ul>
-
-<b>Smart Bridge, India | Data Scientist Intern</b>
-<ul>
-  <li>Developed a Support Vector Machine and Decision Tree machine learning model for the early detection of breast cancer based on the cytological features of the digital scans. Applied cross-validation k-fold technique for best and most</li>
-</ul>
-
 <h2>Projects</h2>
 
 <b>Project 1: Netflix Data Analysis, Tableau Public</b>
