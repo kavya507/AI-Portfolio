@@ -1,6 +1,6 @@
 <div style="text-align: justify">
 
-<h1>Data Scientist</h1>
+<h1>Projects in data science, machine learning and NLP</h1>
 
 <h2>Education</h2>
 <ul>
@@ -21,12 +21,11 @@
   <img src="https://img.shields.io/badge/PyTorch-white?logo=pytorch" alt="PyTorch badge">
 </a>
 <a href="https://colab.research.google.com/drive/1d_q0vUpgwmbN7imUcdsbuDwJ61OuBjvO?usp=sharing" target="_blank">
-  <img src="https://img.shields.io/badge/Twitter-white?logo=Twitter" alt="Twitter badge">
-</a>
-<a href="https://colab.research.google.com/drive/1d_q0vUpgwmbN7imUcdsbuDwJ61OuBjvO?usp=sharing" target="_blank">
   <img src="https://img.shields.io/badge/HuggingFace_Transformers-white?logo=huggingface" alt="HuggingFace Transformers badge">
 </a>
+<a href="https://github.com/kavya507/Movie-Review-Classification" target="_blank">View code on Github </a>
 
+</body>
 <h2>Projects</h2>
 
 <b>Project 1: Netflix Data Analysis, Tableau Public</b>
