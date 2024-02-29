@@ -9,10 +9,8 @@
 </ul>
 
 <h3>Deep NLP for Sentiment Analysis</h3>
-<ul>
-  <li>Sentiment Analysis for movie reviews is the automated task of determining whether the review is either positive or negative. In this project, I built a classifier using PyTorch to fine-tune a pre-trained BERT transformer model and the pre-trained fine tuned model was loaded and it's performance is evaluated achieving good accuracy </li>
+<p>Sentiment Analysis for movie reviews is the automated task of determining whether the review is either positive or negative. In this project, I built a classifier using PyTorch to fine-tune a pre-trained BERT transformer model and the pre-trained fine tuned model was loaded and it's performance is evaluated achieving good accuracy </p>
  
-</ul>
 <a href="https://colab.research.google.com/drive/1d_q0vUpgwmbN7imUcdsbuDwJ61OuBjvO?usp=sharing" target="_blank">
   <img src="https://img.shields.io/badge/Python-white?logo=Python" alt="Python badge">
 </a>
