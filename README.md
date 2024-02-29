@@ -8,7 +8,7 @@
   <li><b>B.Tech., Computer Science</b> | JNTU, Hyderabad, India (<i>May 2019</i>)</li>
 </ul>
 
-<b>Deep NLP for Sentiment Analyser</b>
+<h2>Deep NLP for Sentiment Analyser</h2>
 <ul>
   <li>Sentiment Analyser for movie reviews is the automated task of determining whether the review is either positive or negative. In this project, I built a classifier using PyTorch to fine-tune a pre-trained BERT model and achieved a good accuracy in classifying sentiment from textual data</li>
  
