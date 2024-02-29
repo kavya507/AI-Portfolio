@@ -13,6 +13,22 @@
   <li>Sentiment Analysis for movie reviews is the automated task of determining whether the review is either positive or negative. In this project, I built a classifier using PyTorch to fine-tune a pre-trained BERT transformer model and the pre-trained fine tuned model was loaded and it's performance is evaluated achieving good accuracy </li>
  
 </ul>
+<a href="https://colab.research.google.com/drive/1d_q0vUpgwmbN7imUcdsbuDwJ61OuBjvO?usp=sharing" target="_blank">
+  <img src="https://img.shields.io/badge/Python-white?logo=Python" alt="Python badge">
+</a>
+<a href="https://colab.research.google.com/drive/1d_q0vUpgwmbN7imUcdsbuDwJ61OuBjvO?usp=sharing" target="_blank">
+  <img src="https://img.shields.io/badge/Jupyter-white?logo=Jupyter" alt="Jupyter badge">
+</a>
+<a href="https://colab.research.google.com/drive/1d_q0vUpgwmbN7imUcdsbuDwJ61OuBjvO?usp=sharing" target="_blank">
+  <img src="https://img.shields.io/badge/PyTorch-white?logo=pytorch" alt="PyTorch badge">
+</a>
+<a href="https://colab.research.google.com/drive/1d_q0vUpgwmbN7imUcdsbuDwJ61OuBjvO?usp=sharing" target="_blank">
+  <img src="https://img.shields.io/badge/Twitter-white?logo=Twitter" alt="Twitter badge">
+</a>
+<a href="https://colab.research.google.com/drive/1d_q0vUpgwmbN7imUcdsbuDwJ61OuBjvO?usp=sharing" target="_blank">
+  <img src="https://img.shields.io/badge/HuggingFace_Transformers-white?logo=huggingface" alt="HuggingFace Transformers badge">
+</a>
+
 <h2>Projects</h2>
 
 <b>Project 1: Netflix Data Analysis, Tableau Public</b>
