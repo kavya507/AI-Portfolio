@@ -1,6 +1,6 @@
 ## Projects in Data Science, ML and NLP
 
-###Education
+### Education
 
 M.S., Computer Science | George Mason University (May 2023)
 B.S, Computer Science | JNTUH, India (May 2019)
