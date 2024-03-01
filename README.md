@@ -50,62 +50,14 @@ The web hosts vast quantities of data useful for research. In this project, I bu
 [View code on Github](https://github.com/mattschapman/mattschapman.github.io/tree/master/projects/mongodb_crawler/spiders)
 
 ---
+### Netflix Data Analysis
 
-### Geospatial analysis of deprivation in London
-In this project, I use Geopandas to visualise data on deprivation levels in London and analyse changes over time.
-
-<img src="images/london2.png?raw=true"/>
-
-[![](https://img.shields.io/badge/Python-white?logo=Python)](#) [![](https://img.shields.io/badge/Jupyter-white?logo=Jupyter)](#) [![](https://img.shields.io/badge/Anaconda-white?logo=anaconda)](#) [![](https://img.shields.io/badge/Geopandas-white?logo=Geopandas)](#) [![](https://img.shields.io/badge/Bash-white?logo=GNUbash)](#)
-
-View code on Colab
-
----
-
-### Interpretable machine learning: Parital Dependence Plots, LIME and Shapley values
-A significant barrier to ML's adoption in many fields is the lack of interpretability of black box models. In this project, I use several techniques to gain insights into various models. 
-
-<img src="images/interpretable.png?raw=true"/>
-
-[![](https://img.shields.io/badge/Python-white?logo=Python)](#) [![](https://img.shields.io/badge/Jupyter-white?logo=Jupyter)](#) [![](https://img.shields.io/badge/sklearn-white?logo=scikit-learn)](#) [![](https://img.shields.io/badge/LIME-white?logo=LIME)](#) [![](https://img.shields.io/badge/SHAP-white?logo=SHAP)](#)
-
-[View code on Colab](https://colab.research.google.com/drive/1Msk1tmph1IQYom596vy3MmMwESID0KaW?usp=sharing)
-
----
-
-### Using multi-level modelling in R to investigate the drivers of Covid-19 vaccine hesitancy
-In many tasks, failing to account for the hierarchical relations and autocorrelations between data can create "ecological fallacies" which misguide our interpretation of the data. In this project, I use mutli-level regression modelling to account for spatial autocorrelation and study reasons for Covid-19 vaccine hesitancy. 
-
-<!-- <img src="images/random_intercept.png?raw=true"/> -->
-
-[![](https://img.shields.io/badge/R-white?logo=R)](#) [![](https://img.shields.io/badge/Python-white?logo=Python)](#) [![](https://img.shields.io/badge/Jupyter-white?logo=Jupyter)](#) 
-
-View code on Github
-
-
-
-
-
-
-
-
-
-
-
-
-
+Leveraged Tableau for in-depth analysis of Netflix data, extracting insights on viewership trends and genre preferences
 
 ![](Images/Netflix_Data_Analysis.png)
 
+[View Tableau public](https://public.tableau.com/app/profile/kavya.baltha/viz/Netflix_data_analysis_16882633336630/Dashboard1#2)
 
-
-<h2>Projects</h2>
-
-<b>Project 1: Netflix Data Analysis, Tableau Public</b>
-<ul>
-  <li>Leveraged Tableau for in-depth analysis of Netflix data, extracting insights on viewership trends and genre preferences.</li>
-  <li>Enhanced user experience with dynamic tooltips and parameter controls, translating complex data into visually appealing charts for informed decision-making.</li>
-</ul>
 
 <b>Drug Activity Prediction | Python, SMOTE, PCA, AdaBoost</b>
 <ul>
