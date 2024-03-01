@@ -1,5 +1,7 @@
 ## Projects in Data Science, ML and NLP
 
+---
+
 ### Education
 
 M.S., Computer Science | George Mason University (May 2023)
