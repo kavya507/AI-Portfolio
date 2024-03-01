@@ -95,7 +95,7 @@ View code on Github
 
 
 
-![Project Image](Images/Netflix Data Analysis.png)
+![](Images/Netflix Data Analysis.png)
 
 
 
