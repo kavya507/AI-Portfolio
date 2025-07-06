@@ -23,13 +23,7 @@ export default async (request, context) => {
 
   try {
     console.log('Received request:', request.method);
-    let body;
-    try {
-      body = typeof request.body === 'string' ? JSON.parse(request.body) : request.body;
-    } catch (e) {
-      body = {};
-    }
-    const { message } = body;
+    const { message } = await request.json();
     console.log('Parsed message:', message);
 
     if (!message) {
