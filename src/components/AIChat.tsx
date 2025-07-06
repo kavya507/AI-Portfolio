@@ -69,14 +69,18 @@ const AIChat = ({ onClose, panel = false }: AIChatProps) => {
         throw new Error('Failed to get response')
       }
 
-      const data = await response.json()
-      const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: data.reply,
-        isUser: false,
-        timestamp: new Date()
+      const data = await response.json();
+      if (data.reply) {
+        const aiMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          text: data.reply,
+          isUser: false,
+          timestamp: new Date()
+        }
+        setMessages(prev => [...prev, aiMessage])
+      } else {
+        throw new Error(data.error || 'No response from AI');
       }
-      setMessages(prev => [...prev, aiMessage])
     } catch (error) {
       console.error('Error sending message:', error)
       const errorMessage: Message = {
