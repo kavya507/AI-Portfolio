@@ -2,7 +2,7 @@
   "name": "kavya-ai-portfolio",
   "version": "1.0.0",
   "description": "AI Engineer Portfolio with Interactive Chat",
-  "homepage": "https://kavya507.github.io/portfolio",
+  "homepage": "https://kavya507.github.io/AI-Portfolio",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
