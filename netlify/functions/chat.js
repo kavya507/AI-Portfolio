@@ -1,103 +1,64 @@
-// netlify/functions/chat.js
-import { Configuration, OpenAIApi } from 'openai';
+const fetch = require('node-fetch');
 
-const openai = new OpenAIApi(new Configuration({ 
-  apiKey: process.env.OPENAI_API_KEY 
-}));
-
-export default async (request, context) => {
-  // Handle CORS
-  if (request.method === 'OPTIONS') {
-    return {
-      statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS'
-      }
-    };
-  }
-
-  if (request.method !== 'POST') {
+exports.handler = async function(event, context) {
+  if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
-      body: JSON.stringify({ error: 'Method not allowed' }),
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json'
-      }
+      body: JSON.stringify({ error: 'Method Not Allowed' })
     };
   }
 
+  let body;
   try {
-    const { message } = JSON.parse(request.body || '{}');
+    body = JSON.parse(event.body);
+  } catch (e) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: 'Invalid JSON' })
+    };
+  }
 
-    if (!message) {
+  const userMessage = body.message || '';
+
+  // System prompt with Kavya's details
+  const systemPrompt = `You are a helpful AI assistant for Kavya’s personal portfolio website. Kavya is an engineer, explorer, foodie, and math enthusiast. She has traveled to 12+ countries, loves exploring food and cuisines, enjoys teaching math in creative ways, and builds smart things with AI. Her main skills include engineering, AI, mathematics, and exploration. Her projects include data analysis, smart AI tools, and more.`;
+
+  try {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-3.5-turbo',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userMessage }
+        ],
+        stream: false // Ensure streaming is disabled
+      })
+    });
+
+    const data = await response.json();
+    // Log the full response for debugging
+    console.log('OpenAI raw response:', JSON.stringify(data));
+
+    if (data.choices && data.choices[0] && data.choices[0].message) {
       return {
-        statusCode: 400,
-        body: JSON.stringify({ error: 'Message is required' }),
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json'
-        }
+        statusCode: 200,
+        body: JSON.stringify({ reply: data.choices[0].message.content })
+      };
+    } else {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'No response from AI', details: data })
       };
     }
-
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      stream: true,
-      messages: [
-        { 
-          role: 'system', 
-          content: `You are Kavya's AI portfolio assistant. Kavya is an AI Engineer with expertise in:
-          - Machine Learning and Deep Learning
-          - Natural Language Processing (NLP)
-          - Data Science and Analytics
-          - Python, PyTorch, TensorFlow
-          - Sentiment Analysis and BERT models
-          - Tableau and Data Visualization
-          
-          Education:
-          - M.S., Computer Science from George Mason University (2023)
-          - B.S., Computer Science from JNTUH, India (2019)
-          
-          Key Projects:
-          - Deep NLP for Sentiment Analysis using BERT
-          - Netflix Data Analysis with Tableau
-          - Drug Activity Prediction with AdaBoost
-          - COVID-19 Mobility Analysis
-          - Digit Recognizer with K-Means clustering
-          
-          Be helpful, professional, and enthusiastic about AI and technology. Keep responses concise but informative. If asked about specific technical details, provide accurate information based on her background.`
-        },
-        { role: 'user', content: message }
-      ],
-      max_tokens: 500,
-      temperature: 0.7
-    });
-
-    return new Response(completion.toReadableStream(), {
-      headers: { 
-        'Content-Type': 'text/event-stream',
-        'Access-Control-Allow-Origin': '*',
-        'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive'
-      }
-    });
-
   } catch (error) {
-    console.error('Error in chat function:', error);
-    
     return {
       statusCode: 500,
-      body: JSON.stringify({ 
-        error: 'Internal server error',
-        message: error.message 
-      }),
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json'
-      }
+      body: JSON.stringify({ error: error.message })
     };
   }
 }; 
