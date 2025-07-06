@@ -42,6 +42,16 @@ exports.handler = async function(event, context) {
       })
     });
 
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('OpenAI API error:', errorText);
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'OpenAI API error', details: errorText }),
+        headers: { 'Content-Type': 'application/json' }
+      };
+    }
+
     const data = await response.json();
     // Log the full response for debugging
     console.log('OpenAI raw response:', JSON.stringify(data));
