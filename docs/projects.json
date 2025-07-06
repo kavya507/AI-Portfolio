@@ -1,0 +1,19 @@
+[
+    {
+      "id": "llm-review-summarizer",
+      "title": "LLM Review Summarizer Chrome Extension",
+      "stack": ["FastAPI", "GPT-4o", "LangChain", "Google ADK"],
+      "summary": "Scrapes Amazon & Walmart reviews, sends to FastAPI, returns pros/cons via GPT-4o.",
+      "repo": "https://github.com/kavya507/review-summarizer",
+      "demo": "https://youtu.be/your-demo"
+    },
+    {
+      "id": "qlora-llama2",
+      "title": "Fine-Tuning LLaMA-2 with QLoRA",
+      "stack": ["PyTorch", "PEFT", "bitsandbytes"],
+      "summary": "60 % GPU memory cut & 40 % training-time reduction on MeQSum dataset.",
+      "repo": "https://github.com/kavya507/qlora-llama2",
+      "blog": "https://medium.com/@kdlskavya/fine-tuning-llama2-using-qlora-93ba734f0c57"
+    }
+  ]
+  

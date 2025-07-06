@@ -1,0 +1,41 @@
+{
+  "name": "kavya-ai-portfolio",
+  "version": "1.0.0",
+  "description": "AI Engineer Portfolio with Interactive Chat",
+  "homepage": "https://kavya507.github.io/portfolio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "netlify deploy --prod",
+    "predeploy": "npm run build",
+    "deploy:gh": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "framer-motion": "^10.16.4",
+    "lucide-react": "^0.292.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.5.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react": "^4.1.0",
+    "autoprefixer": "^10.4.16",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  },
+  "keywords": [
+    "ai",
+    "portfolio",
+    "machine-learning",
+    "data-science"
+  ],
+  "author": "Kavya Baltha",
+  "license": "MIT"
+}

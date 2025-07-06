@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kavya • AI Engineer</title>
+  <link href="style.css" rel="stylesheet" />
+  <!-- Tailwind CDN for quick start (switch to local build later) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#0f172a] text-slate-100 font-sans">
+  <!-- ✨ Hero with animated avatar -->
+  <header id="hero" class="min-h-screen flex flex-col items-center justify-center">
+    <div id="avatar" class="w-48 h-48 mb-6"></div>
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-center">
+      Hi, I'm <span class="text-blue-400">Kavya</span><br />
+      I build intelligent systems.
+    </h1>
+    <button id="cta" class="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-xl">
+      View my projects
+    </button>
+  </header>
+
+  <!-- 🗂️ Projects injected by JS -->
+  <section id="projects" class="py-20 container mx-auto px-4"></section>
+
+  <!-- 💬 Floating Chat -->
+  <div id="chat-container" class="fixed bottom-6 right-6 w-80">
+    <!-- messages -->
+    <div id="chat-log" class="bg-white/10 backdrop-blur p-4 rounded-t-xl h-72 overflow-y-auto"></div>
+    <!-- input -->
+    <form id="chat-form" class="flex">
+      <input id="chat-input" placeholder="Ask me anything…" class="flex-1 px-3 py-2 bg-white/10" />
+      <button class="px-4 bg-blue-500 rounded-br-xl">↵</button>
+    </form>
+  </div>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
