@@ -14,6 +14,7 @@ const CORS_HEADERS = {
 export default async (request, context) => {
   // Handle CORS preflight
   if (request.method === 'OPTIONS') {
+    console.log('OPTIONS preflight received');
     return new Response(null, {
       status: 200,
       headers: CORS_HEADERS,
@@ -21,9 +22,12 @@ export default async (request, context) => {
   }
 
   try {
+    console.log('Received request:', request.method);
     const { message } = JSON.parse(request.body || '{}');
+    console.log('Parsed message:', message);
 
     if (!message) {
+      console.log('No message provided');
       return new Response(JSON.stringify({ error: 'Message is required' }), {
         status: 400,
         headers: {
@@ -33,6 +37,7 @@ export default async (request, context) => {
       });
     }
 
+    console.log('About to call OpenAI API');
     const completion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       stream: true,
@@ -46,6 +51,7 @@ export default async (request, context) => {
       max_tokens: 500,
       temperature: 0.7,
     });
+    console.log('OpenAI API call succeeded');
 
     const stream = new ReadableStream({
       async start(controller) {
@@ -59,6 +65,7 @@ export default async (request, context) => {
           controller.enqueue('data: [DONE]\n\n');
           controller.close();
         } catch (error) {
+          console.error('Streaming error:', error);
           controller.error(error);
         }
       },
@@ -73,6 +80,7 @@ export default async (request, context) => {
       },
     });
   } catch (error) {
+    console.error('Function error:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
       headers: {
