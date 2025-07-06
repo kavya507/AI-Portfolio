@@ -45,6 +45,7 @@ exports.handler = async function(event, context) {
     console.log('OpenAI raw response:', JSON.stringify(data));
 
     if (data.choices && data.choices[0] && data.choices[0].message) {
+      console.log('Returning reply:', data.choices[0].message.content);
       return {
         statusCode: 200,
         body: JSON.stringify({ reply: data.choices[0].message.content })
