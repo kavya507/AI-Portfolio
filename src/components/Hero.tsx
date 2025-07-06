@@ -1,110 +1,89 @@
 import { motion } from 'framer-motion'
 
-const Hero = () => {
-  const scrollToContact = () => {
-    const element = document.querySelector('#contact')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+interface HeroProps {
+  onAskAI?: () => void;
+}
 
+const floatingShapes = [
+  { className: 'absolute top-10 left-10 w-16 h-16 bg-primary-500/30 rounded-full blur-2xl', delay: 0 },
+  { className: 'absolute bottom-20 right-20 w-24 h-24 bg-primary-400/20 rounded-full blur-3xl', delay: 0.2 },
+  { className: 'absolute top-1/2 left-1/3 w-10 h-10 bg-primary-600/20 rounded-full blur-xl', delay: 0.4 },
+]
+
+const Hero = ({ onAskAI }: HeroProps) => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900"></div>
-      <div className="absolute inset-0 bg-gradient-radial from-primary-500/10 via-transparent to-transparent"></div>
-      
-      {/* Animated Background Circles */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute top-20 left-20 w-72 h-72 bg-primary-500/5 rounded-full blur-3xl"
-      ></motion.div>
-      <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-20 right-20 w-96 h-96 bg-primary-600/5 rounded-full blur-3xl"
-      ></motion.div>
-
-      <div className="container-max text-center relative z-10 px-4 sm:px-6 lg:px-8">
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 overflow-hidden">
+      {/* Animated floating shapes */}
+      {floatingShapes.map((shape, i) => (
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-8"
-        >
-          <h2 className="text-xl md:text-2xl text-primary-400 font-medium mb-4">
-            Hey, I'm Kavya 👋
-          </h2>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="gradient-text">AI Engineer</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Specializing in Machine Learning, Natural Language Processing, and Data Science.
-            <br />
-            <span className="text-primary-400">Building intelligent solutions for tomorrow.</span>
-          </p>
-        </motion.div>
+          key={i}
+          className={shape.className}
+          initial={{ y: 0 }}
+          animate={{ y: [0, -20, 0] }}
+          transition={{ duration: 6, repeat: Infinity, delay: shape.delay }}
+        />
+      ))}
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-        >
-          <motion.button
-            onClick={scrollToContact}
-            className="px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-primary-500/25"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get In Touch
-          </motion.button>
-          <motion.button
-            onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-4 border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View Projects
-          </motion.button>
-        </motion.div>
+      {/* AI-generated memoji/avatar */}
+      <motion.img
+        src="/IMG_5240-modified.png"
+        alt="Kavya's AI Avatar"
+        className="w-40 h-40 rounded-full border-4 border-primary-400 shadow-xl mb-6 animate-float"
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        style={{ zIndex: 2 }}
+      />
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex justify-center items-center space-x-8 text-gray-400"
-        >
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
-            <span className="text-sm">Available for opportunities</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm">Open to collaborations</span>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      {/* Conversational intro */}
+      <motion.h1
+        className="text-5xl md:text-6xl font-extrabold gradient-text mb-4 text-center"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+        style={{ zIndex: 2 }}
       >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-primary-500 rounded-full flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-primary-500 rounded-full mt-2"
-          ></motion.div>
-        </motion.div>
+        Hey, I'm Kavya <span role="img" aria-label="wave">👋</span>
+      </motion.h1>
+      <motion.p
+        className="text-xl md:text-2xl text-primary-200 mb-8 text-center max-w-2xl"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+        style={{ zIndex: 2 }}
+      >
+        AI Engineer, explorer, foodie, and math enthusiast. I love building smart things, traveling the world, tasting new cuisines, and teaching mathematics in fun ways!
+      </motion.p>
+
+      {/* Playful Ask Me Anything button */}
+      <motion.button
+        onClick={onAskAI}
+        className="ai-chat-btn px-10 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold rounded-full shadow-lg hover:scale-105 hover:shadow-primary-500/40 transition-all duration-300 text-lg flex items-center gap-2 animate-glow"
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.97 }}
+        style={{ zIndex: 2 }}
+      >
+        <span role="img" aria-label="robot">🤖</span> Ask Me Anything
+      </motion.button>
+
+      {/* Fun floating AI icons */}
+      <motion.div
+        className="absolute bottom-10 left-1/4 text-4xl"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 1 }}
+        style={{ zIndex: 1 }}
+      >
+        <span role="img" aria-label="rocket">🚀</span>
+      </motion.div>
+      <motion.div
+        className="absolute top-20 right-1/4 text-4xl"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.4, duration: 1 }}
+        style={{ zIndex: 1 }}
+      >
+        <span role="img" aria-label="bulb">💡</span>
       </motion.div>
     </section>
   )
