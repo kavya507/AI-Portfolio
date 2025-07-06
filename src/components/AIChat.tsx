@@ -69,54 +69,14 @@ const AIChat = ({ onClose, panel = false }: AIChatProps) => {
         throw new Error('Failed to get response')
       }
 
-      const reader = response.body?.getReader()
-      if (!reader) {
-        throw new Error('No response body')
-      }
-
-      let aiResponse = ''
+      const data = await response.json()
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: '',
+        text: data.reply,
         isUser: false,
         timestamp: new Date()
       }
-
       setMessages(prev => [...prev, aiMessage])
-
-      while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
-
-        const chunk = new TextDecoder().decode(value)
-        const lines = chunk.split('\n')
-        
-        for (const line of lines) {
-          if (line.startsWith('data: ')) {
-            const data = line.slice(6)
-            if (data === '[DONE]') {
-              setIsLoading(false)
-              return
-            }
-            
-            try {
-              const parsed = JSON.parse(data)
-              if (parsed.choices?.[0]?.delta?.content) {
-                aiResponse += parsed.choices[0].delta.content
-                setMessages(prev => 
-                  prev.map(msg => 
-                    msg.id === aiMessage.id 
-                      ? { ...msg, text: aiResponse }
-                      : msg
-                  )
-                )
-              }
-            } catch (e) {
-              // Ignore parsing errors for incomplete chunks
-            }
-          }
-        }
-      }
     } catch (error) {
       console.error('Error sending message:', error)
       const errorMessage: Message = {
