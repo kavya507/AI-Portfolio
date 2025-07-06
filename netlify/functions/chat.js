@@ -4,7 +4,8 @@ exports.handler = async function(event, context) {
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
-      body: JSON.stringify({ error: 'Method Not Allowed' })
+      body: JSON.stringify({ error: 'Method Not Allowed' }),
+      headers: { 'Content-Type': 'application/json' }
     };
   }
 
@@ -14,7 +15,8 @@ exports.handler = async function(event, context) {
   } catch (e) {
     return {
       statusCode: 400,
-      body: JSON.stringify({ error: 'Invalid JSON' })
+      body: JSON.stringify({ error: 'Invalid JSON' }),
+      headers: { 'Content-Type': 'application/json' }
     };
   }
 
@@ -48,19 +50,22 @@ exports.handler = async function(event, context) {
       console.log('Returning reply:', data.choices[0].message.content);
       return {
         statusCode: 200,
-        body: JSON.stringify({ reply: data.choices[0].message.content })
+        body: JSON.stringify({ reply: data.choices[0].message.content }),
+        headers: { 'Content-Type': 'application/json' }
       };
     } else {
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: 'No response from AI', details: data })
+        body: JSON.stringify({ error: 'No response from AI', details: data }),
+        headers: { 'Content-Type': 'application/json' }
       };
     }
   } catch (error) {
     console.error('OpenAI API error:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: error.message })
+      body: JSON.stringify({ error: error.message }),
+      headers: { 'Content-Type': 'application/json' }
     };
   }
 }; 
