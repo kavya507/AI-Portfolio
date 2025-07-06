@@ -6,7 +6,7 @@ const openai = new OpenAI({
 });
 
 export default async (request, context) => {
-  // Handle CORS
+  // Handle CORS preflight
   if (request.method === 'OPTIONS') {
     return new Response(null, {
       status: 200,

@@ -57,7 +57,7 @@ const AIChat = ({ onClose, panel = false }: AIChatProps) => {
     setIsLoading(true)
 
     try {
-      const response = await fetch('/.netlify/functions/chat', {
+      const response = await fetch('https://kavyabaltha.netlify.app/.netlify/functions/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
