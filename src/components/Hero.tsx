@@ -24,16 +24,17 @@ const Hero = ({ onAskAI }: HeroProps) => {
         />
       ))}
 
-      {/* AI-generated memoji/avatar */}
-      <motion.img
-        src="/IMG_5240-modified.png"
-        alt="Kavya's AI Avatar"
-        className="w-40 h-40 rounded-full border-4 border-primary-400 shadow-xl mb-6 animate-float"
-        initial={{ y: -30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
-        style={{ zIndex: 2 }}
-      />
+      {/* SVG avatar instead of emoji or real photo */}
+      <div className="w-40 h-40 flex items-center justify-center rounded-full border-4 border-primary-400 shadow-xl mb-6 bg-white animate-float" style={{ zIndex: 2 }}>
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="48" fill="#f3f4f6" stroke="#4f46e5" strokeWidth="4"/>
+          <circle cx="50" cy="40" r="20" fill="#a7f3d0"/>
+          <ellipse cx="50" cy="75" rx="25" ry="15" fill="#a7f3d0"/>
+          <circle cx="43" cy="38" r="3" fill="#222"/>
+          <circle cx="57" cy="38" r="3" fill="#222"/>
+          <path d="M45 48 Q50 53 55 48" stroke="#222" strokeWidth="2" fill="none"/>
+        </svg>
+      </div>
 
       {/* Conversational intro */}
       <motion.h1

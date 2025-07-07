@@ -44,18 +44,18 @@ const AIChat = ({ onClose, panel = false }: AIChatProps) => {
 
   const sendMessage = async (text: string) => {
     if (!text.trim()) return
-
+  
     const userMessage: Message = {
       id: Date.now().toString(),
       text: text.trim(),
       isUser: true,
       timestamp: new Date()
     }
-
+  
     setMessages(prev => [...prev, userMessage])
     setInputValue('')
     setIsLoading(true)
-
+  
     try {
       const response = await fetch('https://kavyabaltha.netlify.app/.netlify/functions/chat', {
         method: 'POST',
@@ -64,25 +64,46 @@ const AIChat = ({ onClose, panel = false }: AIChatProps) => {
         },
         body: JSON.stringify({ message: text.trim() }),
       })
-
-      if (!response.ok) {
-        throw new Error('Failed to get response')
+  
+      if (!response.ok || !response.body) {
+        throw new Error('Network response was not ok or stream was missing');
       }
-
-      const data = await response.json();
-      if (data.reply) {
-        const aiMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          text: data.reply,
-          isUser: false,
-          timestamp: new Date()
+  
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder('utf-8');
+      let aiReply = '';
+  
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+  
+        // Extract content from streamed "data: {content:...}" messages
+        const lines = chunk.split('\n').filter(line => line.trim().startsWith('data:'));
+        for (const line of lines) {
+          const jsonStr = line.replace(/^data:\s*/, '');
+          if (jsonStr === '[DONE]') break;
+          try {
+            const parsed = JSON.parse(jsonStr);
+            if (parsed.content) {
+              aiReply += parsed.content;
+              setMessages(prev => [
+                ...prev.slice(0, -1),
+                {
+                  id: (Date.now() + 1).toString(),
+                  text: aiReply,
+                  isUser: false,
+                  timestamp: new Date()
+                }
+              ]);
+            }
+          } catch (e) {
+            console.warn('Could not parse JSON line from stream:', line);
+          }
         }
-        setMessages(prev => [...prev, aiMessage])
-      } else {
-        throw new Error(data.error || 'No response from AI');
       }
     } catch (error) {
-      console.error('Error sending message:', error)
+      console.error('Error sending message:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: "I'm sorry, I'm having trouble connecting right now. Please try again later or reach out to Kavya directly through the contact form.",
@@ -94,6 +115,7 @@ const AIChat = ({ onClose, panel = false }: AIChatProps) => {
       setIsLoading(false)
     }
   }
+  
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
