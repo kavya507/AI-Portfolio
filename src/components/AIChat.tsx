@@ -256,7 +256,7 @@ const AIChat = ({ onClose, panel = false }: AIChatProps) => {
             onChange={(e) => setInputVal(e.target.value)}
             placeholder="Ask me anything..."
             disabled={isLoading}
-            className="w-full pl-5 pr-12 py-3 rounded-full bg-white border border-gray-200 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400"
+            className="w-full pl-5 pr-12 py-3 rounded-full bg-white border border-gray-200 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400"
           />
           <motion.button
             type="submit"
